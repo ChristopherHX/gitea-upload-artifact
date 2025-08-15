@@ -1,3 +1,16 @@
+# gitea-upload-artifact
+
+This is a copy of the actions/upload-artifact@v4 that permits usage on Gitea, since it is detected as GHES by default and aborts.
+
+```yaml
+- uses: https://github.com/christopherHX/gitea-upload-artifact@v4
+  with:
+    name: my-artifact
+    path: path/to/artifact/world.txt
+```
+
+_act_runner has to use the external public gitea url otherwise you may get problems due to returned urls_
+
 # `@actions/upload-artifact`
 
 Upload [Actions Artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts) from your Workflow Runs. Internally powered by [@actions/artifact](https://github.com/actions/toolkit/tree/main/packages/artifact) package.
