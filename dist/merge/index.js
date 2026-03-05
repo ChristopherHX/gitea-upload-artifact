@@ -2927,12 +2927,7 @@ function getResultsServiceUrl() {
     return new URL(resultsUrl).origin;
 }
 function isGhes() {
-    const ghUrl = new URL(process.env['GITHUB_SERVER_URL'] || 'https://github.com');
-    const hostname = ghUrl.hostname.trimEnd().toUpperCase();
-    const isGitHubHost = hostname === 'GITHUB.COM';
-    const isGheHost = hostname.endsWith('.GHE.COM');
-    const isLocalHost = hostname.endsWith('.LOCALHOST');
-    return !isGitHubHost && !isGheHost && !isLocalHost;
+    return false;
 }
 function getGitHubWorkspaceDir() {
     const ghWorkspaceDir = process.env['GITHUB_WORKSPACE'];
